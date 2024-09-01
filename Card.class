@@ -1,0 +1,13 @@
+public class Card {
+    private final String face;
+    private final String suit;
+
+    public Card(String var1, String var2) {
+        this.face = var1;
+        this.suit = var2;
+    }
+
+    public String toString() {
+        return this.face + " of " + this.suit;
+    }
+}
