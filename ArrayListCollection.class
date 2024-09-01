@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.Iterator;
+
+public class ArrayListCollection {
+    public ArrayListCollection() {
+    }
+
+    public static void main(String[] var0) {
+        ArrayList var1 = new ArrayList();
+        var1.add("red");
+        var1.add(0, "yellow");
+        System.out.print("Display list contents with counter-controlled loop:");
+
+        for(int var2 = 0; var2 < var1.size(); ++var2) {
+            System.out.printf(" %s", var1.get(var2));
+        }
+
+        display(var1, "\nDisplay list contents with enhanced for statement:");
+        var1.add("green");
+        var1.add("yellow");
+        display(var1, "List with two new elements:");
+        var1.remove("yellow");
+        display(var1, "Remove first instance of yellow:");
+        var1.remove(1);
+        display(var1, "Remove second list element (green):");
+        System.out.printf("\"red\" is %sin the list%n", var1.contains("red") ? "" : "not ");
+        System.out.printf("Size: %d%n", var1.size());
+    }
+
+    public static void display(ArrayList<String> var0, String var1) {
+        System.out.printf(var1);
+        Iterator var2 = var0.iterator();
+
+        while(var2.hasNext()) {
+            String var3 = (String)var2.next();
+            System.out.printf(" %s", var3);
+        }
+
+        System.out.println();
+    }
+}
