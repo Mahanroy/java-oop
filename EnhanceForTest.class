@@ -1,0 +1,19 @@
+
+public class EnhanceForTest {
+    public EnhanceForTest() {
+    }
+
+    public static void main(String[] var0) {
+        int[] var1 = new int[]{87, 68, 94, 100, 83, 78, 85, 91, 76, 87};
+        int var2 = 0;
+        int[] var3 = var1;
+        int var4 = var1.length;
+
+        for(int var5 = 0; var5 < var4; ++var5) {
+            int var6 = var3[var5];
+            var2 += var6;
+            System.out.printf("Total of array element: %d%n", var2);
+        }
+
+    }
+}
