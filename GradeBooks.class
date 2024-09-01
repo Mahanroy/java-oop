@@ -1,0 +1,103 @@
+public class GradeBooks {
+    private String courseName;
+    private int[] grades;
+
+    public GradeBooks(String var1, int[] var2) {
+        this.courseName = var1;
+        this.grades = var2;
+    }
+
+    public void setCourseName(String var1) {
+        this.courseName = var1;
+    }
+
+    public String getCourseName() {
+        return this.courseName;
+    }
+
+    public void processGrade() {
+        this.outputGrades();
+        System.out.printf("%nClass average is %.2f%n", this.getAverage());
+        System.out.printf("Lowest grade is %d%nHighest grade is %d%n%n", this.getMinimum(), this.getMaximum());
+        this.outputBarChart();
+    }
+
+    public int getMinimum() {
+        int var1 = this.grades[0];
+        int[] var2 = this.grades;
+        int var3 = var2.length;
+
+        for(int var4 = 0; var4 < var3; ++var4) {
+            int var5 = var2[var4];
+            if (var5 < var1) {
+                var1 = var5;
+            }
+        }
+
+        return var1;
+    }
+
+    public int getMaximum() {
+        int var1 = this.grades[0];
+        int[] var2 = this.grades;
+        int var3 = var2.length;
+
+        for(int var4 = 0; var4 < var3; ++var4) {
+            int var5 = var2[var4];
+            if (var5 > var1) {
+                var1 = var5;
+            }
+        }
+
+        return var1;
+    }
+
+    public double getAverage() {
+        int var1 = 0;
+        int[] var2 = this.grades;
+        int var3 = var2.length;
+
+        for(int var4 = 0; var4 < var3; ++var4) {
+            int var5 = var2[var4];
+            var1 += var5;
+        }
+
+        return (double)var1 / (double)this.grades.length;
+    }
+
+    public void outputBarChart() {
+        System.out.println("Grade distribution:");
+        int[] var1 = new int[11];
+        int[] var2 = this.grades;
+        int var3 = var2.length;
+
+        for(int var4 = 0; var4 < var3; ++var4) {
+            int var5 = var2[var4];
+            ++var1[var5 / 10];
+        }
+
+        for(int var6 = 0; var6 < var1.length; ++var6) {
+            if (var6 == 10) {
+                System.out.printf("%5d: ", 100);
+            } else {
+                System.out.printf("%02d- %02d: ", var6 * 10, var6 * 10 + 9);
+            }
+
+            for(var3 = 0; var3 < var1[var6]; ++var3) {
+                System.out.printf("*");
+            }
+
+            System.out.println();
+        }
+
+    }
+
+    public void outputGrades() {
+        System.out.printf("The grades are: %n%n");
+
+        for(int var1 = 0; var1 < this.grades.length; ++var1) {
+            System.out.printf("Student %2d: %3d%n", var1 + 1, this.grades[var1]);
+        }
+
+    }
+}
