@@ -1,0 +1,19 @@
+import java.security.SecureRandom;
+
+public class RandomIntegers {
+    public RandomIntegers() {
+    }
+
+    public static void main(String[] var0) {
+        SecureRandom var1 = new SecureRandom();
+
+        for(int var2 = 1; var2 <= 20; ++var2) {
+            int var3 = 1 + var1.nextInt(6);
+            System.out.printf("%d  ", var3);
+            if (var2 % 5 == 0) {
+                System.out.println();
+            }
+        }
+
+    }
+}
