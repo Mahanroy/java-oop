@@ -1,0 +1,31 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class MaximumFinder {
+    public MaximumFinder() {
+    }
+
+    public static double maximum(double var0, double var2, double var4) {
+        double var6 = var0;
+        if (var2 > var0) {
+            var6 = var2;
+        }
+
+        if (var4 > var6) {
+            var6 = var4;
+        }
+
+        return var6;
+    }
+
+    public static void main(String[] var0) {
+        Scanner var1 = new Scanner(System.in);
+        var1.useLocale(Locale.US);
+        System.out.print("Enter three numbers: ");
+        double var2 = var1.nextDouble();
+        double var4 = var1.nextDouble();
+        double var6 = var1.nextDouble();
+        double var8 = maximum(var2, var4, var6);
+        System.out.println("Maximum number: " + var8);
+    }
+}
