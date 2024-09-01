@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class ClassAverage1 {
+    public ClassAverage1() {
+    }
+
+    public static void main(String[] var0) {
+        Scanner var1 = new Scanner(System.in);
+        int var2 = 0;
+        int var3 = 0;
+        System.out.print("Enter grade or -1 to quit: ");
+
+        for(int var4 = var1.nextInt(); var4 != -1; var4 = var1.nextInt()) {
+            var2 += var4;
+            ++var3;
+            System.out.print("Enter grade or -1 to quit: ");
+        }
+
+        if (var3 != 0) {
+            double var5 = (double)var2 / (double)var3;
+            System.out.printf("%nTotal of the %d grades entered is %d%n", var3, var2);
+            System.out.printf("Class average is %.2f%n", var5);
+        } else {
+            System.out.println("No grades were entered");
+        }
+
+    }
+}
