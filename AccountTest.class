@@ -1,0 +1,27 @@
+import java.util.Locale;
+import java.util.Scanner;
+
+public class AccountTest {
+    public AccountTest() {
+    }
+
+    public static void main(String[] var0) {
+        Account var1 = new Account("Jane Green", 50.0);
+        Account var2 = new Account("John Blue", -7.53);
+        System.out.printf("%s balance: $%.2f%n", var1.getName(), var1.getBalance());
+        System.out.printf("%s balance: $%.2f%n%n", var2.getName(), var2.getBalance());
+        Scanner var3 = new Scanner(System.in);
+        System.out.printf(Locale.US, "Enter deposit amount for account1: ");
+        double var4 = var3.nextDouble();
+        System.out.printf("%nAdding %.2f to account1 balance%n%n", var4);
+        var1.deposit(var4);
+        System.out.printf("%s balance: $%.2f%n", var1.getName(), var1.getBalance());
+        System.out.printf("%s balance: $%.2f%n%n", var2.getName(), var2.getBalance());
+        System.out.print("Enter deposit amount for account2: ");
+        var4 = var3.nextDouble();
+        System.out.printf("%nAdding %.2f to account2 balance%n%n", var4);
+        var2.deposit(var4);
+        System.out.printf("%s balance: $%.2f%n", var1.getName(), var1.getBalance());
+        System.out.printf("%s balance: $%.2f%n%n", var2.getName(), var2.getBalance());
+    }
+}
