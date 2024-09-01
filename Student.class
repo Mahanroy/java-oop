@@ -1,0 +1,48 @@
+public class Student {
+    private String name;
+    private double average;
+
+    public Student(String var1, double var2) {
+        this.name = var1;
+        if (var2 > 0.0 && var2 <= 100.0) {
+            this.average = var2;
+        }
+
+    }
+
+    public void setName(String var1) {
+        this.name = var1;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setAverage(double var1) {
+        if (var1 > 0.0 && var1 <= 100.0) {
+            this.average = var1;
+        }
+
+    }
+
+    public double getAverage() {
+        return this.average;
+    }
+
+    public String getLetterGrade() {
+        String var1 = "";
+        if (this.average >= 90.0) {
+            var1 = "A";
+        } else if (this.average >= 80.0) {
+            var1 = "B";
+        } else if (this.average >= 70.0) {
+            var1 = "C";
+        } else if (this.average >= 60.0) {
+            var1 = "D";
+        } else {
+            var1 = "F";
+        }
+
+        return var1;
+    }
+}
