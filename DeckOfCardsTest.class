@@ -1,0 +1,17 @@
+public class DeckOfCardsTest {
+    public DeckOfCardsTest() {
+    }
+
+    public static void main(String[] var0) {
+        DeckOfCards var1 = new DeckOfCards();
+        var1.shuffle();
+
+        for(int var2 = 1; var2 <= 52; ++var2) {
+            System.out.printf("%-19s", var1.dealCard());
+            if (var2 % 4 == 0) {
+                System.out.println();
+            }
+        }
+
+    }
+}
