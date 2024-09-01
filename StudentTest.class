@@ -1,0 +1,11 @@
+public class StudentTest {
+    public StudentTest() {
+    }
+
+    public static void main(String[] var0) {
+        Student var1 = new Student("Jane Green", 93.5);
+        Student var2 = new Student("John Blue", 72.75);
+        System.out.printf("%s's letter grade is: %s%n", var1.getName(), var1.getLetterGrade());
+        System.out.printf("%s's letter grade is: %s%n", var2.getName(), var2.getLetterGrade());
+    }
+}
