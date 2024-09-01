@@ -1,0 +1,51 @@
+public class AutoPolicy {
+    private int accountNumber;
+    private String makeAndModel;
+    private String state;
+
+    public AutoPolicy(int var1, String var2, String var3) {
+        this.accountNumber = var1;
+        this.makeAndModel = var2;
+        this.state = var3;
+    }
+
+    public void setAccountNumber(int var1) {
+        this.accountNumber = var1;
+    }
+
+    public int getAccountNumber() {
+        return this.accountNumber;
+    }
+
+    public void setMakeAndModel(String var1) {
+        this.makeAndModel = var1;
+    }
+
+    public String getMakeAndModel() {
+        return this.makeAndModel;
+    }
+
+    public void setState(String var1) {
+        this.state = var1;
+    }
+
+    public String getState() {
+        return this.state;
+    }
+
+    public boolean isNoFaultState() {
+        boolean var1;
+        switch (this.getState()) {
+            case "MA":
+            case "NJ":
+            case "NY":
+            case "PA":
+                var1 = true;
+                break;
+            default:
+                var1 = false;
+        }
+
+        return var1;
+    }
+}
