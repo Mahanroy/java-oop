@@ -1,0 +1,8 @@
+enum Craps$Status {
+    CONTINUE,
+    WON,
+    LOST;
+
+    private Craps$Status() {
+    }
+}
