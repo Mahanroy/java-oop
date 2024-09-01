@@ -1,0 +1,36 @@
+import java.security.SecureRandom;
+
+public class DeckOfCards {
+    private Card[] deck;
+    private int currentCard;
+    private static final int NUMBER_OF_CARDS = 52;
+    private static final SecureRandom randomNumbers = new SecureRandom();
+
+    public DeckOfCards() {
+        String[] var1 = new String[]{"Ace", "Deuce", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
+        String[] var2 = new String[]{"Hearts", "Diamonds", "Clubs", "Spades"};
+        this.deck = new Card[52];
+        this.currentCard = 0;
+
+        for(int var3 = 0; var3 < this.deck.length; ++var3) {
+            this.deck[var3] = new Card(var1[var3 % 13], var2[var3 / 13]);
+        }
+
+    }
+
+    public void shuffle() {
+        this.currentCard = 0;
+
+        for(int var1 = 0; var1 < this.deck.length; ++var1) {
+            int var2 = randomNumbers.nextInt(52);
+            Card var3 = this.deck[var1];
+            this.deck[var1] = this.deck[var2];
+            this.deck[var2] = var3;
+        }
+
+    }
+
+    public Card dealCard() {
+        return this.currentCard < this.deck.length ? this.deck[this.currentCard++] : null;
+    }
+}
