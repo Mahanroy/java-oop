@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Analysis {
+    public Analysis() {
+    }
+
+    public static void main(String[] var0) {
+        Scanner var1 = new Scanner(System.in);
+        int var2 = 0;
+        int var3 = 0;
+
+        for(int var4 = 1; var4 <= 10; ++var4) {
+            System.out.print("Enter result (1 = pass, 2 = fail): ");
+            int var5 = var1.nextInt();
+            if (var5 == 1) {
+                ++var2;
+            } else {
+                ++var3;
+            }
+        }
+
+        System.out.printf("Passed: %d%nFailed: %d%n", var2, var3);
+        if (var2 > 8) {
+            System.out.println("Bonus to instructor!");
+        }
+
+    }
+}
