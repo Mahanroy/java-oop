@@ -1,0 +1,15 @@
+public class AutoPolicyTest {
+    public AutoPolicyTest() {
+    }
+
+    public static void main(String[] var0) {
+        AutoPolicy var1 = new AutoPolicy(11111111, "Toyota Camry", "NJ");
+        AutoPolicy var2 = new AutoPolicy(22222222, "Ford Fusion", "ME");
+        policyInNoFaultState(var1);
+        policyInNoFaultState(var2);
+    }
+
+    public static void policyInNoFaultState(AutoPolicy var0) {
+        System.out.printf("The auto policy:%nAccount #: %d; Car: %s; State: %s %s a no-fault state%n%n", var0.getAccountNumber(), var0.getMakeAndModel(), var0.getState(), var0.isNoFaultState() ? "is" : "is not");
+    }
+}
