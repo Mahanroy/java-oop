@@ -1,0 +1,42 @@
+import java.security.SecureRandom;
+
+public class RollDie {
+    public RollDie() {
+    }
+
+    public static void main(String[] var0) {
+        SecureRandom var1 = new SecureRandom();
+        int var2 = 0;
+        int var3 = 0;
+        int var4 = 0;
+        int var5 = 0;
+        int var6 = 0;
+        int var7 = 0;
+
+        for(int var8 = 1; var8 <= 6000000; ++var8) {
+            int var9 = 1 + var1.nextInt(6);
+            switch (var9) {
+                case 1:
+                    ++var2;
+                    break;
+                case 2:
+                    ++var3;
+                    break;
+                case 3:
+                    ++var4;
+                    break;
+                case 4:
+                    ++var5;
+                    break;
+                case 5:
+                    ++var6;
+                    break;
+                case 6:
+                    ++var7;
+            }
+        }
+
+        System.out.println("Face\tFrequency");
+        System.out.printf("1\t%d%n2\t%d%n3\t%d%n4\t%d%n5\t%d%n6\t%d%n", var2, var3, var4, var5, var6, var7);
+    }
+}
