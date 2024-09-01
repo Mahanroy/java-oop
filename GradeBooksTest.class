@@ -1,0 +1,11 @@
+public class GradeBooksTest {
+    public GradeBooksTest() {
+    }
+
+    public static void main(String[] var0) {
+        int[] var1 = new int[]{87, 68, 94, 100, 83, 78, 85, 91, 76, 87};
+        GradeBooks var2 = new GradeBooks("CS101 Introduction to Java Programming", var1);
+        System.out.printf("Welcome to the grade book for %n%s%n%n", var2.getCourseName());
+        var2.processGrade();
+    }
+}
