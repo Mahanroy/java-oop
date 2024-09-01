@@ -1,0 +1,54 @@
+import java.util.Scanner;
+
+public class LetterGrades {
+    public LetterGrades() {
+    }
+
+    public static void main(String[] var0) {
+        Scanner var1 = new Scanner(System.in);
+        int var2 = 0;
+        int var3 = 0;
+        int var4 = 0;
+        int var5 = 0;
+        int var6 = 0;
+        int var7 = 0;
+        int var8 = 0;
+        System.out.printf("%s%n%s%n", "Enter the integer grades in the range 0-100.", "Type -1 to terminate input:");
+
+        while(true) {
+            int var9 = var1.nextInt();
+            if (var9 == -1) {
+                if (var3 != 0) {
+                    double var11 = (double)var2 / (double)var3;
+                    System.out.printf("Total of the %d grades entered is %d%n", var3, var2);
+                    System.out.printf("Class average is %.2f%n", var11);
+                    System.out.printf("%n%s%n%s%d%n%s%d%n%s%d%n%s%d%n%s%d%n", "Number of students who received each grade:", "A: ", var4, "B: ", var5, "C: ", var6, "D: ", var7, "F: ", var8);
+                } else {
+                    System.out.println("No grades were entered");
+                }
+
+                return;
+            }
+
+            var2 += var9;
+            ++var3;
+            switch (var9 / 10) {
+                case 6:
+                    ++var7;
+                    break;
+                case 7:
+                    ++var6;
+                    break;
+                case 8:
+                    ++var5;
+                    break;
+                case 9:
+                case 10:
+                    ++var4;
+                    break;
+                default:
+                    ++var8;
+            }
+        }
+    }
+}
