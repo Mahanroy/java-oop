@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 public class StudentTest2 {
-    
+
     // Define the Student class
     public static class Student {
         private String name;
@@ -83,14 +83,22 @@ public class StudentTest2 {
             addButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    String name = nameField.getText();
+                    String name = nameField.getText().trim();
                     int rollNumber;
                     int grade;
+                    if (name.isEmpty()) {
+                        studentDisplay.setText("Please enter a valid name.");
+                        return;
+                    }
                     try {
                         rollNumber = Integer.parseInt(rollNumberField.getText());
                         grade = Integer.parseInt(gradeField.getText());
                         students.add(new Student(name, rollNumber, grade));
                         studentDisplay.setText("Student added.");
+                        // Clear input fields
+                        nameField.setText("");
+                        rollNumberField.setText("");
+                        gradeField.setText("");
                     } catch (NumberFormatException ex) {
                         studentDisplay.setText("Please enter valid roll number and grade.");
                     }
@@ -111,6 +119,8 @@ public class StudentTest2 {
                         }
                     } catch (NumberFormatException ex) {
                         studentDisplay.setText("Please enter a valid index.");
+                    } finally {
+                        removeIndexField.setText(""); // Clear input field
                     }
                 }
             });
@@ -118,11 +128,15 @@ public class StudentTest2 {
             displayButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
-                    StringBuilder displayText = new StringBuilder("Displaying all students:\n");
-                    for (Student student : students) {
-                        displayText.append(student).append("\n");
+                    if (students.isEmpty()) {
+                        studentDisplay.setText("No students to display.");
+                    } else {
+                        StringBuilder displayText = new StringBuilder("Displaying all students:\n");
+                        for (Student student : students) {
+                            displayText.append(student).append("\n");
+                        }
+                        studentDisplay.setText(displayText.toString());
                     }
-                    studentDisplay.setText(displayText.toString());
                 }
             });
 
